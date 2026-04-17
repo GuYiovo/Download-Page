@@ -946,10 +946,24 @@
     })();
 
     (function buildPage() {
+      const localImages = [
+        'image hosting_8.webp', 'image hostinggg.webp', 'image hostinggg_2.webp',
+        'image hostinggg_3.webp', 'image hostinggg_4.webp', 'image hostinggg_5.webp',
+        'image hostinggg_6.webp', 'image hostinggg_7.webp', 'image hostinggg_8.webp',
+        'image hostinggg_9.webp', 'image hostinggg_10.webp', 'image hostinggg_11.webp',
+        'image hostinggg_12.webp', 'image hostinggg_13.webp', 'image hostinggg_14.webp',
+        'image hostinggg_15.webp', 'image hostinggg_16.webp', 'image hostinggg_17.webp',
+        'image hostinggg_18.webp', 'image hostinggg_19.webp', 'image hostinggg_20.webp',
+        'image hostinggg_21.webp', 'image hostinggg_22.webp', 'image hostinggg_23.webp',
+        'image hostinggg_24.webp', 'image hostinggg_25.webp', 'image hostinggg_26.webp',
+        'image hostinggg_27.webp', 'image hostinggg_28.webp', 'image hostinggg_29.webp',
+        'image hostinggg_30.webp', 'image hostinggg_31.webp', 'image hostinggg_32.webp'
+      ];
+
       const imageCount = isMobile ? 12 : 22;
       const allImages = [];
       for (let i = 0; i < imageCount; i++) {
-        allImages.push(Math.floor(Math.random() * 699) + 1);
+        allImages.push(localImages[Math.floor(Math.random() * localImages.length)]);
       }
       const columnOrders = [
         [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21],
@@ -962,7 +976,7 @@
         let html = '<div class="image-group">';
         for (let i = 0; i < order.length; i++) {
           let isEager = isVisibleInitially && (i < 4);
-          html += `<img src="https://www.loliapi.com/acg/pc/?id=${allImages[order[i]]}" alt="" loading="${isEager ? 'eager' : 'lazy'}" decoding="async" width="400" height="560">`;
+          html += `<img src="image hosting/${allImages[order[i]]}" alt="" loading="${isEager ? 'eager' : 'lazy'}" decoding="async" width="400" height="560">`;
         }
         return html + '</div>';
       }
